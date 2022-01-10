@@ -1,7 +1,7 @@
 // Create a reference for the canvas
 
 
-canvas=document.getElementById("myCanvas")
+canvas=document.getElementById("myCanvas");
 ctx=canvas.getContext("2d");
 img_width = 300;
 img_height = 100;
@@ -23,7 +23,7 @@ function uploadimg() {
 }
 
 //Write a code to grab the key-pressed event
-
+window.addEventListener("keydown",my_keydown);
 function my_keydown(e)
 {
 	keyPressed = e.keyCode;
@@ -36,27 +36,27 @@ function my_keydown(e)
 		console.log("alphabet key");
 		}
 	
-	if(keyPressed >=48 && keyPressed<=57){
+	else if(keyPressed >=48 && keyPressed<=57){
 		//write a code to check the type of key pressed
 		numberkey();
 		document.getElementById("d1").innerHTML="You have pressed a number key,right😉";
 		console.log("number key");
 	}
 	
-	if(keyPressed >=37 && keyPressed<=40){
+	else if(keyPressed >=37 && keyPressed<=40){
 		//write a code to check the type of key pressed
 		arrowkey();
 		document.getElementById("d1").innerHTML="You have pressed an arrow key,right😉";
 		console.log("arrow key");
 	}
-	if(keyPressed ==17 && keyPressed==18 && keyPressed==27){
+	else if(keyPressed ==17 || keyPressed==18 || keyPressed==27){
 		//write a code to check the type of key pressed
 		specialkey();
 		document.getElementById("d1").innerHTML="You have pressed a special key,right😉";
 		console.log("special key");
 	}
 else{
-	otherkey;
+	otherkey();
 	document.getElementById("d1").innerHTML="You have pressed a other key,right😉";
 		console.log("other key");
 }	
@@ -65,7 +65,7 @@ else{
 
 function aplhabetkey()
 {
-	img_image="alpkey.png";
+	img_image="Alpkey.png";
 	add();
 	//upload respective image with the message. 
 
@@ -77,7 +77,7 @@ function numberkey()
 }
 function arrowkey()
 {
-	img_image="arrkey.png";
+	img_image="Arrkey.png";
 	add();
 }
 function specialkey()
